@@ -1,83 +1,174 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
 
-html {
-  scroll-behavior: smooth;
+.font-light {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300 !important;
 }
 
-.nunito-light {
-  font-family: "Nunito", sans-serif;
-  font-weight: 300;
+.font-regular {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400 !important;
 }
 
-.nunito-regular {
-  font-family: "Nunito", sans-serif;
-  font-weight: 400;
+.font-bold {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 600 !important;
 }
 
-.nunito-bold {
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
+.topnav a {
+  padding: 12px;
+}
+
+.topnav a:hover {
+  border-bottom: 3px solid black;
+  text-decoration: none;
+}
+
+.topnav a.active {
+  border-bottom: 3px solid black;
 }
 
 .bg-blur {
-  background-color: #007bff24;
+  background-color: #0202020a !important;
   backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
   -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
     brightness(140%);
 }
 
-.bg-bottom-blur {
-  background-color: #5accaa38;
-  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
-    brightness(140%);
-}
-
-.bottom-nav {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 80%;
-}
-
-.custom-btn {
+.bg-blur-reserve {
+  position: fixed;
+  margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+  left: 20px;
+  right: 20px;
   padding: 15px;
-  font-family: "Nunito", sans-serif;
-  font-weight: 600;
   width: 200px;
-  text-transform: uppercase;
-  border-radius: 30px;
+  bottom: 20px;
+  border-radius: 15px;
+  background-color: #21252938;
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
+    brightness(140%);
+}
+
+.bg-blur-theme {
+  position: fixed;
+  float: right;
+  /* left: 20px; */
+  right: 50px;
+  padding: 10px;
+  width: 50px;
+  bottom: 540px;
+  border-radius: 15px;
+  background-color: #21252938;
+  backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%)
+    brightness(140%);
+  z-index: 9999;
+}
+
+.darkTheme {
+  background-color: black;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link {
+  color: gray;
+}
+
+#myImg {
+  /* border-radius: 5px; */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modalz {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modalz-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Add Animation */
+.modalz-content {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.closez {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.closez:hover,
+.closez:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
-  .w-100 {
-    height: 100vh;
-    width: 100vh !important;
+  .nav-item {
+    margin-left: 0rem !important;
   }
 
-  .header-text {
-    margin-top: -500px !important;
+  .bg-blur-theme {
+    bottom: 100px;
+    right: 20px;
   }
 
-  .carousel-control-next,
-  .carousel-control-prev {
-    display: none !important;
-  }
-
-  .aboutcon {
-    margin-top: 200px !important;
-  }
-
-  #gallery {
-    margin-top: 650px !important;
-  }
-
-  .galcon {
-    margin-top: 850px !important;
+  .modalz-content {
+    width: 100%;
   }
 }
-
 @media only screen and (min-width: 600px) {
-  .carousel {
-    margin-top: -100px;
+  .bg-blur-reserve {
+    bottom: -20px !important;
   }
 }

@@ -1,28 +1,21 @@
-$(document).ready(function() {  
+$(document).ready(function() {
+      $(document).on('click', '#myImg', function(){
+          $('.navbar').hide();
+          $('.bg-blur-theme').hide();
+          $('#myModal').css('display', 'block')
+          $('#img01').attr('src', this.src);
+        })
+        
+        $('.closez').on('click', function(){
+            $('#myModal').css('display', 'none')
+            $('.navbar').show();
+            $('.bg-blur-theme').show();
+      })
 
-  $('.navbar-toggler').on('click', function() {
-     $(".navbar-home").removeClass('navbar-transparent')
-      $(".navbar-home").addClass('bg-blur')
-  });
 
-  $(window).scroll(function() { // check if scroll event happened
-    $('.navbar-collapse').collapse('hide');
-          if ($(document).scrollTop() > 60) { // check if user scrolled more than 50 from top of the browser window
-            $(".navbar-home").removeClass('navbar-transparent')
-            $(".navbar-home").addClass('bg-blur')
-            // $(".navbar-home").addClass('shadow-sm')
-            $(".navbar-brand").removeClass('text-white')
-            $(".navbar-brand").addClass('text-primary')
-            $(".navclr").removeClass('text-white')
-            $(".navclr").addClass('text-primary')
-          } else {
-            $(".navbar-home").removeClass('bg-blur')
-            $(".navbar-home").addClass('navbar-transparent')
-            $(".navclr").removeClass('text-primary')
-            $(".navclr").addClass('text-white')
-            $(".navbar-brand").removeClass('text-primary')
-            $(".navbar-brand").addClass('text-white')
-            // $(".navbar-home").removeClass('shadow-sm')
-          }
-        });
+    $('.changeTheme').on('click', function() {
+        $('body').toggleClass('darkTheme');
+        $('.infos').removeClass('text-dark');
+        $('.infos').addClass('text-white');
+    })
 })
